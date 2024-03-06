@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="actividad1_PDA_23_24" nsURI="http://www.example.org/actividad1_PDA_23_24"
+    nsPrefix="actividad1_PDA_23_24">
+  <eClassifiers xsi:type="ecore:EClass" name="Universidad">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nom_universidad" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="campus" upperBound="-1"
+        eType="#//Campus" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="departamentos" upperBound="-1"
+        eType="#//Departamento" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Campus">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Departamento">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="areaconocimientos" upperBound="-1"
+        eType="#//AreaConocimiento" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AreaConocimiento">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profesores" upperBound="-1"
+        eType="#//Profesor" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Profesor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CategoriaProfesional" eType="#//CategoriaProfesional"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Doctorado" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imparte_en" eType="#//Campus"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="meritos" upperBound="-1"
+        eType="#//Merito" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Horas_docencia_max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tfe" upperBound="-1" eType="#//TFE"
+        eOpposite="#//TFE/co_director"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tribunal_de" upperBound="-1"
+        eType="#//TFE" eOpposite="#//TFE/tribunal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CategoriaProfesional">
+    <eLiterals name="CU"/>
+    <eLiterals name="TU" value="1"/>
+    <eLiterals name="TEU" value="2"/>
+    <eLiterals name="CD" value="3"/>
+    <eLiterals name="AYD" value="4"/>
+    <eLiterals name="PC" value="5"/>
+    <eLiterals name="AY" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Merito" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MeritoInvestigacion" abstract="true"
+      eSuperTypes="#//Merito"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MeritoGestion" abstract="true" eSuperTypes="#//Merito"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MeritoDocencia" abstract="true" eSuperTypes="#//Merito"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TFE" eSuperTypes="#//MeritoDocencia">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Titulo" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Autor" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Calificacion" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="co_director" eType="#//Profesor"
+        eOpposite="#//Profesor/tfe"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tribunal" lowerBound="2"
+        upperBound="3" eType="#//Profesor" eOpposite="#//Profesor/tribunal_de"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Evaluacion" eSuperTypes="#//MeritoDocencia">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Calificacion" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnioEvaluacion" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CargoNOEstatuario" abstract="true" eSuperTypes="#//MeritoGestion"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Secretario" eSuperTypes="#//CargoNOEstatuario"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Subdirector" eSuperTypes="#//CargoNOEstatuario"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sexenio" eSuperTypes="#//MeritoInvestigacion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnioInicio" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnioFinal" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Publicacion" eSuperTypes="#//MeritoInvestigacion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Titulo" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nombre_revista" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Cuartil" lowerBound="1"
+        eType="#//CuartilIndexacion"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Indexacion" lowerBound="1"
+        eType="#//TipoIndexacion"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CuartilIndexacion">
+    <eLiterals name="C1"/>
+    <eLiterals name="C2" value="1"/>
+    <eLiterals name="C3" value="2"/>
+    <eLiterals name="C4" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TipoIndexacion">
+    <eLiterals name="SJR"/>
+    <eLiterals name="JCR" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comision" eSuperTypes="#//MeritoGestion"/>
+</ecore:EPackage>

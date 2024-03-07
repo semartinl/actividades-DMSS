@@ -1,0 +1,7 @@
+/.metadata/
+*.ide
+*.tests
+*.ui
+*.ui.tests
+*.edit
+*.editor

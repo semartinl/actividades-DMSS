@@ -16,7 +16,7 @@
       <profesores
           Name="Jose"
           imparte_en="Magisterio"
-          tfe="Gestion de empresas">
+          tfe="Gestion de empresa">
         <meritos
             xsi:type="actividad1_PDA_23_24:Publicacion"
             Name="Influencia de la guerra de Ucrania en los precios"

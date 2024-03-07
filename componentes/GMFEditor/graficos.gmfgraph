@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="componentes">
+  <figures name="Default">
+    <descriptors name="ConectorFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ConectorFigure"/>
+    </descriptors>
+    <descriptors name="ComponenteFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="ComponenteFigure">
+        <layout xsi:type="gmfgraph:FlowLayout"/>
+        <children xsi:type="gmfgraph:Label" name="ComponenteNameFigure" text="&lt;...>"/>
+      </actualFigure>
+      <accessors figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+  </figures>
+  <nodes name="Componente" figure="ComponenteFigure"/>
+  <connections name="Conector" figure="ConectorFigure"/>
+  <labels name="ComponenteName" figure="ComponenteFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+</gmfgraph:Canvas>

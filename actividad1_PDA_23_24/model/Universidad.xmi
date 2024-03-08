@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actividad1_PDA_23_24:Universidad
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:actividad1_PDA_23_24="http://www.example.org/actividad1_PDA_23_24"
+    xsi:schemaLocation="http://www.example.org/actividad1_PDA_23_24 ../metamodel/actividad1_PDA_23_24.ecore">
+  <campus/>
+  <departamentos>
+    <areaconocimientos>
+      <profesores
+          Name="Sergio"
+          tfe="//@departamentos.0/@areaconocimientos.0/@profesores.0/@meritos.3 //@departamentos.0/@areaconocimientos.0/@profesores.0/@meritos.4"
+          tribunal_de="//@departamentos.0/@areaconocimientos.0/@profesores.0/@meritos.4">
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Evaluacion"
+            Name="1"
+            Calificacion="7.0"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Evaluacion"
+            Name="2"
+            Calificacion="8.0"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Evaluacion"
+            Name="3"
+            Calificacion="5.0"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:TFE"
+            co_director="Sergio"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:TFE"
+            co_director="Sergio"
+            tribunal="Sergio"/>
+      </profesores>
+    </areaconocimientos>
+  </departamentos>
+</actividad1_PDA_23_24:Universidad>

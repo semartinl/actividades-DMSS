@@ -2,6 +2,14 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="actividad1_PDA_23_24" nsURI="http://www.example.org/actividad1_PDA_23_24"
     nsPrefix="actividad1_PDA_23_24">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Universidad">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Nom_universidad" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" iD="true"/>
@@ -31,12 +39,23 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="CategoriaProfesional" eType="#//CategoriaProfesional"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Doctorado" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imparte_en" eType="#//Campus"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descuento_docencia_tfe"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.tribunal_de->size() + (self.tfe->size()*4)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imparte_en" eType="#//Campus">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="attribute descuento_docencia_evaluaciones_docentes:ecore::EInt[1]{derived transient volatile}&#xA;{&#xA;derivation: self.meritos->select(e | e->oclIsTypeOf(Evaluacion));&#xA;}"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="meritos" upperBound="-1"
         eType="#//Merito" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Horas_docencia_max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Horas_docencia_max" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tfe" upperBound="-1" eType="#//TFE"
         eOpposite="#//TFE/co_director"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tribunal_de" upperBound="-1"
@@ -84,6 +103,13 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnioFinal" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sexenio_vivo" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="(2024-self.AnioInicio)&lt;6"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Publicacion" eSuperTypes="#//MeritoInvestigacion">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Titulo" lowerBound="1"

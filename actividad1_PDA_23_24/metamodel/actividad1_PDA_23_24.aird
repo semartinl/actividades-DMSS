@@ -4,6 +4,7 @@
     <semanticResources>actividad1_PDA_23_24.ecore</semanticResources>
     <semanticResources>actividad1_PDA_23_24.genmodel</semanticResources>
     <semanticResources>../model/unex.xmi</semanticResources>
+    <semanticResources>../model/Universidad.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_XLVW4NvREe6ATpF1Bg_d6A">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XNCAANvREe6ATpF1Bg_d6A" name="actividad1_PDA_23_24" repPath="#_XMkF8NvREe6ATpF1Bg_d6A" changeId="1709743916165">

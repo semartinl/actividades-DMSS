@@ -43,11 +43,18 @@
     <genClasses ecoreClass="actividad1_PDA_23_24.ecore#//AreaConocimiento">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//AreaConocimiento/Name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actividad1_PDA_23_24.ecore#//AreaConocimiento/profesores"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actividad1_PDA_23_24.ecore#//AreaConocimiento/imparte_docencia_en"/>
     </genClasses>
     <genClasses ecoreClass="actividad1_PDA_23_24.ecore#//Profesor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Profesor/Name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Profesor/CategoriaProfesional"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Profesor/Doctorado"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Profesor/descuento_docencia_tfe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Profesor/descuento_docencia_evaluaciones_docentes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Profesor/descuento_docencias"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Profesor/descuento_investigacion_final"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Profesor/descuento_gestion_final"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Profesor/descuento_final"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference actividad1_PDA_23_24.ecore#//Profesor/imparte_en"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference actividad1_PDA_23_24.ecore#//Profesor/meritos"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Profesor/Horas_docencia_max"/>
@@ -77,6 +84,7 @@
     <genClasses ecoreClass="actividad1_PDA_23_24.ecore#//Sexenio">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Sexenio/AnioInicio"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Sexenio/AnioFinal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Sexenio/sexenio_vivo"/>
     </genClasses>
     <genClasses ecoreClass="actividad1_PDA_23_24.ecore#//Publicacion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute actividad1_PDA_23_24.ecore#//Publicacion/Titulo"/>

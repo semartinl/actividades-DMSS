@@ -33,6 +33,12 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="profesores" upperBound="-1"
         eType="#//Profesor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imparte_docencia_en" upperBound="-1"
+        eType="#//Campus" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.profesores.imparte_en->asSet()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Profesor">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -47,11 +53,42 @@
         <details key="derivation" value="self.tribunal_de->size() + (self.tfe->size()*4)"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imparte_en" eType="#//Campus">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="attribute descuento_docencia_evaluaciones_docentes:ecore::EInt[1]{derived transient volatile}&#xA;{&#xA;derivation: self.meritos->select(e | e->oclIsTypeOf(Evaluacion));&#xA;}"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descuento_docencia_evaluaciones_docentes"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.meritos->selectByType(Evaluacion)->select(Calificacion >= 7)->size() * 5"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descuento_docencias" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="&#xA;&#x9;&#x9;&#x9; let suma_descuento:Integer = self.descuento_docencia_evaluaciones_docentes + self.descuento_docencia_tfe in&#xA;&#x9;&#x9;&#x9;if(suma_descuento &lt; 40) then&#xA;&#x9;&#x9;&#x9;&#x9;self.descuento_docencia_evaluaciones_docentes + self.descuento_docencia_tfe&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;40&#xA;&#x9;&#x9;&#x9;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descuento_investigacion_final"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="&#xA;&#x9;&#x9;&#x9;let suma_investigacion:Integer = self.meritos->selectByType(Sexenio)->size() * 5 in&#xA;&#x9;&#x9;&#x9;if(self.meritos->selectByType(Sexenio)->size() >0 and suma_investigacion&lt;40) then&#xA;&#x9;&#x9;&#x9;&#x9;suma_investigacion&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;if (self.meritos->selectByType(Publicacion)->select(e | e.Indexacion = TipoIndexacion::JCR)->size() &lt; 40) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;self.meritos->selectByType(Publicacion)->select(e | e.Indexacion = TipoIndexacion::JCR)->size()&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;40&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descuento_gestion_final"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="&#xA;&#x9;&#x9;&#x9; let suma_descuento:Integer = self.meritos->selectByType(Comision)->size() + (self.meritos->selectByType(Secretario)->size() * 4) + (self.meritos->selectByType(Subdirector)->size() * 6) in&#xA;&#x9;&#x9;&#x9;if(suma_descuento &lt; 40) then&#xA;&#x9;&#x9;&#x9;&#x9;suma_descuento&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;40&#xA;&#x9;&#x9;&#x9;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descuento_final" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="&#xA;&#x9;&#x9;&#x9; let suma_descuento:Integer = self.descuento_docencias + self.descuento_investigacion_final + self.descuento_gestion_final in&#xA;&#x9;&#x9;&#x9;if(suma_descuento &lt; 80) then&#xA;&#x9;&#x9;&#x9;&#x9;suma_descuento&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;80&#xA;&#x9;&#x9;&#x9;endif"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imparte_en" eType="#//Campus"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="meritos" upperBound="-1"
         eType="#//Merito" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Horas_docencia_max" lowerBound="1"

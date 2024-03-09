@@ -5,11 +5,19 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:actividad1_PDA_23_24="http://www.example.org/actividad1_PDA_23_24"
     xsi:schemaLocation="http://www.example.org/actividad1_PDA_23_24 ../metamodel/actividad1_PDA_23_24.ecore">
-  <campus/>
-  <departamentos>
-    <areaconocimientos>
+  <campus Name="EP"/>
+  <campus Name="C2"/>
+  <campus Name="c3"/>
+  <campus Name="c4"/>
+  <campus Name="c56"/>
+  <campus Name="c6"/>
+  <departamentos
+      Name="1">
+    <areaconocimientos
+        Name="A!">
       <profesores
           Name="Sergio"
+          imparte_en="EP"
           tfe="//@departamentos.0/@areaconocimientos.0/@profesores.0/@meritos.3 //@departamentos.0/@areaconocimientos.0/@profesores.0/@meritos.4"
           tribunal_de="//@departamentos.0/@areaconocimientos.0/@profesores.0/@meritos.4">
         <meritos
@@ -32,6 +40,55 @@
             co_director="Sergio"
             tribunal="Sergio"/>
       </profesores>
+      <profesores
+          Name="Paco"
+          imparte_en="C2"/>
+      <profesores
+          Name="Javi"
+          imparte_en="EP"/>
+      <profesores
+          Name="p3"
+          imparte_en="c4"/>
+      <profesores
+          Name="fer"
+          imparte_en="C2"/>
+      <profesores
+          Name="jorge"
+          imparte_en="c56"/>
+    </areaconocimientos>
+    <areaconocimientos
+        Name="A2">
+      <profesores
+          Name="Pepe"
+          imparte_en="EP">
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Sexenio"
+            Name="Sexenio1"
+            AnioInicio="2014"
+            AnioFinal="2020"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Publicacion"
+            Name="R1"
+            Titulo="asdfd"
+            Nombre_revista="Revista1"
+            Indexacion="JCR"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Publicacion"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Comision"
+            Name="c!"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Comision"
+            Name="C2"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Secretario"
+            Name="SEcretario"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Subdirector"
+            Name="s3"/>
+      </profesores>
+      <profesores
+          Name="Francisco"/>
     </areaconocimientos>
   </departamentos>
 </actividad1_PDA_23_24:Universidad>

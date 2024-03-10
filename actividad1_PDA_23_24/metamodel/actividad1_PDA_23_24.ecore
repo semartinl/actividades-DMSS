@@ -41,6 +41,15 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Profesor">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="menos_6_sexenios co_director_distinto dos_meritos_diferentes_noEstatuarios solapamiento_sexenios"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="menos_6_sexenios" value="self.meritos->selectByType(Sexenio)->size()&lt;6"/>
+      <details key="co_director_distinto" value="self.meritos->selectByType(TFE)->intersection(self.tfe)->size() = 0"/>
+      <details key="dos_meritos_diferentes_noEstatuarios" value="self.meritos->selectByType(Secretario)->size() &lt;= 1 and self.meritos->selectByType(Subdirector)->size() &lt;= 1"/>
+      <details key="solapamiento_sexenios" value="self.meritos->selectByType(Sexenio)->forAll( e1, e2 | e1 &lt;> e2 implies (not((e1.AnioInicio &lt;= e2.AnioInicio and e2.AnioInicio&lt;=e1.AnioFinal) or (e1.AnioInicio &lt;= e2.AnioFinal and e2.AnioFinal&lt;=e1.AnioFinal) )) )"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="CategoriaProfesional" eType="#//CategoriaProfesional"/>

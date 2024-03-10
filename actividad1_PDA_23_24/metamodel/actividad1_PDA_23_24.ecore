@@ -36,7 +36,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="imparte_docencia_en" upperBound="-1"
         eType="#//Campus" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="derivation" value="self.profesores.imparte_en->asSet()"/>
+        <details key="derivation" value="self.profesores.imparte_en->oclAsSet()"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>

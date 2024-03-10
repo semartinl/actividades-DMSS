@@ -138,6 +138,7 @@
       </profesores>
       <profesores
           Name="Francisco"
+          imparte_en="c56"
           tribunal_de="2 rewf"/>
     </areaconocimientos>
   </departamentos>

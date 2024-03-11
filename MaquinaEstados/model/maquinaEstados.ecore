@@ -5,7 +5,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="MaquinaEstados">
     <eStructuralFeatures xsi:type="ecore:EReference" name="estado" upperBound="-1"
         eType="#//Estado" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="neweclass6" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transiciones" upperBound="-1"
         eType="#//Transicion" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Estado">

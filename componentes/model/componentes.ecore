@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="componentes" nsURI="http://www.example.org/componentes" nsPrefix="componentes">
-  <eClassifiers xsi:type="ecore:EClass" name="Root">
+  <eClassifiers xsi:type="ecore:EClass" name="CBAPP">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conectores" upperBound="-1"
         eType="#//Conector" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="componentes" upperBound="-1"
-        eType="#//Componente" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentes" lowerBound="1"
+        upperBound="-1" eType="#//Componente" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Conector">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
-        eType="#//Componente"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
-        eType="#//Componente"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endA" lowerBound="1" eType="#//ProvidedInterface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endB" lowerBound="1" eType="#//RequiredInterface"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Componente">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provides" upperBound="-1"
+        eType="#//ProvidedInterface" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requires" upperBound="-1"
+        eType="#//RequiredInterface" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProvidedInterface" eSuperTypes="#//Interface"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RequiredInterface" eSuperTypes="#//Interface"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Interface" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

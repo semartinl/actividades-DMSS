@@ -9,17 +9,24 @@
   <foreignModel>componentes.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Componentes" disposableProviderFactory="true" ecorePackage="componentes.ecore#/">
-    <genClasses ecoreClass="componentes.ecore#//Root">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentes.ecore#//Root/conectores"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentes.ecore#//Root/componentes"/>
+    <genClasses ecoreClass="componentes.ecore#//CBAPP">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentes.ecore#//CBAPP/conectores"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentes.ecore#//CBAPP/componentes"/>
     </genClasses>
     <genClasses ecoreClass="componentes.ecore#//Conector">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentes.ecore#//Conector/origen"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentes.ecore#//Conector/destino"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentes.ecore#//Conector/nombre"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentes.ecore#//Conector/endA"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference componentes.ecore#//Conector/endB"/>
     </genClasses>
     <genClasses ecoreClass="componentes.ecore#//Componente">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentes.ecore#//Componente/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentes.ecore#//Componente/provides"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference componentes.ecore#//Componente/requires"/>
+    </genClasses>
+    <genClasses ecoreClass="componentes.ecore#//ProvidedInterface"/>
+    <genClasses ecoreClass="componentes.ecore#//RequiredInterface"/>
+    <genClasses ecoreClass="componentes.ecore#//Interface">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute componentes.ecore#//Interface/Name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

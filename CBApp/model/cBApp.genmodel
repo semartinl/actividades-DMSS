@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/CBApp/src-gen" creationIcons="false" editDirectory="/CBApp.edit/src-gen"
+    editorDirectory="/CBApp.editor/src-gen" modelPluginID="CBApp" modelName="CBApp"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>cBApp.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="CBApp" disposableProviderFactory="true" ecorePackage="cBApp.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cBApp.ecore#//TipoAlgoritmo">
+      <genEnumLiterals ecoreEnumLiteral="cBApp.ecore#//TipoAlgoritmo/RSA"/>
+      <genEnumLiterals ecoreEnumLiteral="cBApp.ecore#//TipoAlgoritmo/DES"/>
+      <genEnumLiterals ecoreEnumLiteral="cBApp.ecore#//TipoAlgoritmo/AES"/>
+    </genEnums>
+    <genClasses ecoreClass="cBApp.ecore#//Sistema">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cBApp.ecore#//Sistema/conectores"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cBApp.ecore#//Sistema/componentes"/>
+    </genClasses>
+    <genClasses ecoreClass="cBApp.ecore#//Componente"/>
+    <genClasses ecoreClass="cBApp.ecore#//Conector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cBApp.ecore#//Conector/endA"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cBApp.ecore#//Conector/endB"/>
+    </genClasses>
+    <genClasses ecoreClass="cBApp.ecore#//Seguro">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cBApp.ecore#//Seguro/Algoritmo"/>
+    </genClasses>
+    <genClasses ecoreClass="cBApp.ecore#//No_Seguro"/>
+  </genPackages>
+</genmodel:GenModel>

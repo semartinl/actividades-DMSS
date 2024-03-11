@@ -11,7 +11,7 @@
   <genPackages prefix="MaquinaEstados" disposableProviderFactory="true" ecorePackage="maquinaEstados.ecore#/">
     <genClasses ecoreClass="maquinaEstados.ecore#//MaquinaEstados">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference maquinaEstados.ecore#//MaquinaEstados/estado"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference maquinaEstados.ecore#//MaquinaEstados/neweclass6"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference maquinaEstados.ecore#//MaquinaEstados/transiciones"/>
     </genClasses>
     <genClasses ecoreClass="maquinaEstados.ecore#//Estado">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute maquinaEstados.ecore#//Estado/Name"/>

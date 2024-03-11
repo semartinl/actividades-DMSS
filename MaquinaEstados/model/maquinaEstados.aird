@@ -5,7 +5,7 @@
     <semanticResources>maquinaEstados.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_HFDJkNyyEe6ID-ZIxXAC8w">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_HFnxUNyyEe6ID-ZIxXAC8w" name="maquinaEstados" repPath="#_HFiRwNyyEe6ID-ZIxXAC8w" changeId="1709837231768">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_HFnxUNyyEe6ID-ZIxXAC8w" name="maquinaEstados" repPath="#_HFiRwNyyEe6ID-ZIxXAC8w" changeId="1710088313782">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="maquinaEstados.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -341,9 +341,9 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_32yaNtyyEe6ID-ZIxXAC8w" name="[0..*] neweclass6" sourceNode="_T31fkNyyEe6ID-ZIxXAC8w" targetNode="_3TZZQNyyEe6ID-ZIxXAC8w">
-      <target xmi:type="ecore:EReference" href="maquinaEstados.ecore#//MaquinaEstados/neweclass6"/>
-      <semanticElements xmi:type="ecore:EReference" href="maquinaEstados.ecore#//MaquinaEstados/neweclass6"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_32yaNtyyEe6ID-ZIxXAC8w" name="[0..*] transiciones" sourceNode="_T31fkNyyEe6ID-ZIxXAC8w" targetNode="_3TZZQNyyEe6ID-ZIxXAC8w">
+      <target xmi:type="ecore:EReference" href="maquinaEstados.ecore#//MaquinaEstados/transiciones"/>
+      <semanticElements xmi:type="ecore:EReference" href="maquinaEstados.ecore#//MaquinaEstados/transiciones"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_32yaN9yyEe6ID-ZIxXAC8w" description="_zOnVMNyyEe6ID-ZIxXAC8w" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_32yaOdyyEe6ID-ZIxXAC8w" showIcon="false"/>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_32yaONyyEe6ID-ZIxXAC8w" labelSize="6" showIcon="false" labelColor="39,76,114"/>

@@ -6,11 +6,15 @@
     xmlns:actividad1_PDA_23_24="http://www.example.org/actividad1_PDA_23_24"
     xsi:schemaLocation="http://www.example.org/actividad1_PDA_23_24 ../metamodel/actividad1_PDA_23_24.ecore"
     Nom_universidad="UNEX">
-  <campus Name="EP"/>
-  <campus Name="C5"/>
+  <campus Name="EP"
+      profesores_campus="Sergio Javi Pepe"/>
+  <campus Name="C5"
+      profesores_campus="fer"/>
   <campus Name="c3"/>
-  <campus Name="c4"/>
-  <campus Name="c56"/>
+  <campus Name="c4"
+      profesores_campus="p3"/>
+  <campus Name="c56"
+      profesores_campus="jorge Francisco"/>
   <campus Name="c6"/>
   <departamentos
       Name="DEP">
@@ -39,8 +43,8 @@
             Name="2"
             Titulo="fdsf"
             Autor="dsfdsf"
-            co_director="Javi"
-            tribunal="Pepe Francisco"/>
+            co_director="fer"
+            tribunal="Pepe Francisco jorge"/>
         <meritos
             xsi:type="actividad1_PDA_23_24:Sexenio"
             Name="Sexenio1"
@@ -84,29 +88,33 @@
             Name="Sex3"
             AnioInicio="2008"
             AnioFinal="2013"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Comision"
+            Name="hOLA"/>
       </profesores>
       <profesores
           Name="Javi"
-          imparte_en="EP"
-          tfe="2 TFE1"/>
+          tfe="TFE1"
+          imparte_en="EP"/>
       <profesores
           Name="p3"
-          imparte_en="c4"
-          tfe="rewf"/>
+          tfe="rewf"
+          imparte_en="c4"/>
       <profesores
           Name="fer"
+          tfe="2"
           imparte_en="C5"/>
       <profesores
           Name="jorge"
-          imparte_en="c56"
-          tribunal_de="TFE1 rewf"/>
+          tribunal_de="TFE1 rewf 2"
+          imparte_en="c56"/>
     </areaconocimientos>
     <areaconocimientos
         Name="A2">
       <profesores
           Name="Pepe"
-          imparte_en="EP"
-          tribunal_de="TFE1 2 rewf">
+          tribunal_de="TFE1 2 rewf"
+          imparte_en="EP">
         <meritos
             xsi:type="actividad1_PDA_23_24:Sexenio"
             Name="Sexenio2"
@@ -138,8 +146,8 @@
       </profesores>
       <profesores
           Name="Francisco"
-          imparte_en="c56"
-          tribunal_de="2 rewf"/>
+          tribunal_de="2 rewf"
+          imparte_en="c56"/>
     </areaconocimientos>
   </departamentos>
 </actividad1_PDA_23_24:Universidad>

@@ -21,6 +21,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Campus">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profesores_campus" ordered="false"
+        upperBound="-1" eType="#//Profesor" eOpposite="#//Profesor/imparte_en"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Departamento">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -42,11 +44,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Profesor">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="menos_6_sexenios co_director_distinto dos_meritos_diferentes_noEstatuarios solapamiento_sexenios"/>
+      <details key="constraints" value="menos_6_sexenios dos_meritos_diferentes_noEstatuarios solapamiento_sexenios"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="menos_6_sexenios" value="self.meritos->selectByType(Sexenio)->size()&lt;6"/>
-      <details key="co_director_distinto" value="self.meritos->selectByType(TFE)->intersection(self.tfe)->size() = 0"/>
       <details key="dos_meritos_diferentes_noEstatuarios" value="self.meritos->selectByType(Secretario)->size() &lt;= 1 and self.meritos->selectByType(Subdirector)->size() &lt;= 1"/>
       <details key="solapamiento_sexenios" value="self.meritos->selectByType(Sexenio)->forAll( e1, e2 | e1 &lt;> e2 implies (not((e1.AnioInicio &lt;= e2.AnioInicio and e2.AnioInicio&lt;=e1.AnioFinal) or (e1.AnioInicio &lt;= e2.AnioFinal and e2.AnioFinal&lt;=e1.AnioFinal) )) )"/>
     </eAnnotations>
@@ -59,7 +60,7 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="derivation" value="self.tribunal_de->size() + (self.tfe->size()*4)"/>
+        <details key="derivation" value="self.tribunal_de->size() + (self.tfe->size()*4 + self.meritos->selectByType(TFE)->size()*4)"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="descuento_docencia_evaluaciones_docentes"
@@ -73,14 +74,14 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" volatile="true"
         transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="derivation" value="&#xA;&#x9;&#x9;&#x9; let suma_descuento:Integer = self.descuento_docencia_evaluaciones_docentes + self.descuento_docencia_tfe in&#xA;&#x9;&#x9;&#x9;if(suma_descuento &lt; 40) then&#xA;&#x9;&#x9;&#x9;&#x9;self.descuento_docencia_evaluaciones_docentes + self.descuento_docencia_tfe&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;40&#xA;&#x9;&#x9;&#x9;endif"/>
+        <details key="derivation" value="&#xA;&#x9;&#x9;&#x9; let suma_descuento:Integer = self.descuento_docencia_evaluaciones_docentes + self.descuento_docencia_tfe in&#xA;&#x9;&#x9;&#x9;if(suma_descuento &lt; 40) then&#xA;&#x9;&#x9;&#x9;&#x9;suma_descuento&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;40&#xA;&#x9;&#x9;&#x9;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="descuento_investigacion_final"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         volatile="true" transient="true" derived="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-        <details key="derivation" value="&#xA;&#x9;&#x9;&#x9;let suma_investigacion:Integer = self.meritos->selectByType(Sexenio)->size() * 5 in&#xA;&#x9;&#x9;&#x9;if(self.meritos->selectByType(Sexenio)->size() >0 and suma_investigacion&lt;40) then&#xA;&#x9;&#x9;&#x9;&#x9;suma_investigacion&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;if (self.meritos->selectByType(Publicacion)->select(e | e.Indexacion = TipoIndexacion::JCR)->size() &lt; 40) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;self.meritos->selectByType(Publicacion)->select(e | e.Indexacion = TipoIndexacion::JCR)->size()&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;40&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;endif"/>
+        <details key="derivation" value="&#xA;&#x9;&#x9;&#x9;let suma_investigacion:Integer = self.meritos->selectByType(Sexenio)->size() * 5 in&#xA;&#x9;&#x9;&#x9;if(self.meritos->selectByType(Sexenio)->size() >0) then&#xA;&#x9;&#x9;&#x9;&#x9;if(suma_investigacion&lt;40) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;suma_investigacion&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;40&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;if (self.meritos->selectByType(Publicacion)->select(e | e.Indexacion = TipoIndexacion::JCR)->size() &lt; 40) then&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;self.meritos->selectByType(Publicacion)->select(e | e.Indexacion = TipoIndexacion::JCR)->size()&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;40&#xA;&#x9;&#x9;&#x9;&#x9;endif&#xA;&#x9;&#x9;&#x9;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="descuento_gestion_final"
@@ -97,7 +98,6 @@
         <details key="derivation" value="&#xA;&#x9;&#x9;&#x9; let suma_descuento:Integer = self.descuento_docencias + self.descuento_investigacion_final + self.descuento_gestion_final in&#xA;&#x9;&#x9;&#x9;if(suma_descuento &lt; 80) then&#xA;&#x9;&#x9;&#x9;&#x9;suma_descuento&#xA;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;80&#xA;&#x9;&#x9;&#x9;endif"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="imparte_en" eType="#//Campus"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="meritos" upperBound="-1"
         eType="#//Merito" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Horas_docencia_max" lowerBound="1"
@@ -106,6 +106,8 @@
         eOpposite="#//TFE/co_director"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tribunal_de" upperBound="-1"
         eType="#//TFE" eOpposite="#//TFE/tribunal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imparte_en" lowerBound="1"
+        eType="#//Campus" eOpposite="#//Campus/profesores_campus"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CategoriaProfesional">
     <eLiterals name="CU"/>
@@ -125,6 +127,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="MeritoGestion" abstract="true" eSuperTypes="#//Merito"/>
   <eClassifiers xsi:type="ecore:EClass" name="MeritoDocencia" abstract="true" eSuperTypes="#//Merito"/>
   <eClassifiers xsi:type="ecore:EClass" name="TFE" eSuperTypes="#//MeritoDocencia">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="co_director_distinto mismo_area_conocimiento_codirector_tribunal tribunal_sin_director_o_codirector"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="co_director_distinto" value="self.co_director &lt;> self.oclContainer"/>
+      <details key="mismo_area_conocimiento_codirector_tribunal" value="self.tribunal.oclContainer->includes(self.co_director.oclContainer)"/>
+      <details key="tribunal_sin_director_o_codirector" value="self.tribunal->excludes(self.oclContainer) and self.tribunal->excludes(self.co_director)"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Titulo" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Autor" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -145,6 +155,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Secretario" eSuperTypes="#//CargoNOEstatuario"/>
   <eClassifiers xsi:type="ecore:EClass" name="Subdirector" eSuperTypes="#//CargoNOEstatuario"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sexenio" eSuperTypes="#//MeritoInvestigacion">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="inicio_menor_final compendio_6_anios"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="inicio_menor_final" value="self.AnioInicio &lt; self.AnioFinal"/>
+      <details key="compendio_6_anios" value="0&lt; (self.AnioFinal - self.AnioInicio)and (self.AnioFinal - self.AnioInicio)&lt;=6"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnioInicio" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="AnioFinal" lowerBound="1"

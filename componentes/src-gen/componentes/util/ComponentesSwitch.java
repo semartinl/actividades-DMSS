@@ -66,9 +66,9 @@ public class ComponentesSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case ComponentesPackage.ROOT: {
-			Root root = (Root) theEObject;
-			T result = caseRoot(root);
+		case ComponentesPackage.CBAPP: {
+			CBAPP cbapp = (CBAPP) theEObject;
+			T result = caseCBAPP(cbapp);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -87,23 +87,48 @@ public class ComponentesSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case ComponentesPackage.PROVIDED_INTERFACE: {
+			ProvidedInterface providedInterface = (ProvidedInterface) theEObject;
+			T result = caseProvidedInterface(providedInterface);
+			if (result == null)
+				result = caseInterface(providedInterface);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ComponentesPackage.REQUIRED_INTERFACE: {
+			RequiredInterface requiredInterface = (RequiredInterface) theEObject;
+			T result = caseRequiredInterface(requiredInterface);
+			if (result == null)
+				result = caseInterface(requiredInterface);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ComponentesPackage.INTERFACE: {
+			Interface interface_ = (Interface) theEObject;
+			T result = caseInterface(interface_);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Root</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>CBAPP</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Root</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>CBAPP</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseRoot(Root object) {
+	public T caseCBAPP(CBAPP object) {
 		return null;
 	}
 
@@ -134,6 +159,51 @@ public class ComponentesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComponente(Componente object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Provided Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Provided Interface</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProvidedInterface(ProvidedInterface object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Required Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Required Interface</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRequiredInterface(RequiredInterface object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Interface</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInterface(Interface object) {
 		return null;
 	}
 

@@ -67,8 +67,8 @@ public class ComponentesAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected ComponentesSwitch<Adapter> modelSwitch = new ComponentesSwitch<Adapter>() {
 		@Override
-		public Adapter caseRoot(Root object) {
-			return createRootAdapter();
+		public Adapter caseCBAPP(CBAPP object) {
+			return createCBAPPAdapter();
 		}
 
 		@Override
@@ -79,6 +79,21 @@ public class ComponentesAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseComponente(Componente object) {
 			return createComponenteAdapter();
+		}
+
+		@Override
+		public Adapter caseProvidedInterface(ProvidedInterface object) {
+			return createProvidedInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseRequiredInterface(RequiredInterface object) {
+			return createRequiredInterfaceAdapter();
+		}
+
+		@Override
+		public Adapter caseInterface(Interface object) {
+			return createInterfaceAdapter();
 		}
 
 		@Override
@@ -101,16 +116,16 @@ public class ComponentesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link componentes.Root <em>Root</em>}'.
+	 * Creates a new adapter for an object of class '{@link componentes.CBAPP <em>CBAPP</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see componentes.Root
+	 * @see componentes.CBAPP
 	 * @generated
 	 */
-	public Adapter createRootAdapter() {
+	public Adapter createCBAPPAdapter() {
 		return null;
 	}
 
@@ -139,6 +154,48 @@ public class ComponentesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createComponenteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentes.ProvidedInterface <em>Provided Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentes.ProvidedInterface
+	 * @generated
+	 */
+	public Adapter createProvidedInterfaceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentes.RequiredInterface <em>Required Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentes.RequiredInterface
+	 * @generated
+	 */
+	public Adapter createRequiredInterfaceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link componentes.Interface <em>Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see componentes.Interface
+	 * @generated
+	 */
+	public Adapter createInterfaceAdapter() {
 		return null;
 	}
 

@@ -22,13 +22,13 @@ public interface ComponentesFactory extends EFactory {
 	ComponentesFactory eINSTANCE = componentes.impl.ComponentesFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Root</em>'.
+	 * Returns a new object of class '<em>CBAPP</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Root</em>'.
+	 * @return a new object of class '<em>CBAPP</em>'.
 	 * @generated
 	 */
-	Root createRoot();
+	CBAPP createCBAPP();
 
 	/**
 	 * Returns a new object of class '<em>Conector</em>'.
@@ -47,6 +47,24 @@ public interface ComponentesFactory extends EFactory {
 	 * @generated
 	 */
 	Componente createComponente();
+
+	/**
+	 * Returns a new object of class '<em>Provided Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Provided Interface</em>'.
+	 * @generated
+	 */
+	ProvidedInterface createProvidedInterface();
+
+	/**
+	 * Returns a new object of class '<em>Required Interface</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Required Interface</em>'.
+	 * @generated
+	 */
+	RequiredInterface createRequiredInterface();
 
 	/**
 	 * Returns the package supported by this factory.

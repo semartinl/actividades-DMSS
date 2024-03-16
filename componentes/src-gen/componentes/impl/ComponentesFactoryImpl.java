@@ -56,12 +56,16 @@ public class ComponentesFactoryImpl extends EFactoryImpl implements ComponentesF
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case ComponentesPackage.ROOT:
-			return createRoot();
+		case ComponentesPackage.CBAPP:
+			return createCBAPP();
 		case ComponentesPackage.CONECTOR:
 			return createConector();
 		case ComponentesPackage.COMPONENTE:
 			return createComponente();
+		case ComponentesPackage.PROVIDED_INTERFACE:
+			return createProvidedInterface();
+		case ComponentesPackage.REQUIRED_INTERFACE:
+			return createRequiredInterface();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -73,9 +77,9 @@ public class ComponentesFactoryImpl extends EFactoryImpl implements ComponentesF
 	 * @generated
 	 */
 	@Override
-	public Root createRoot() {
-		RootImpl root = new RootImpl();
-		return root;
+	public CBAPP createCBAPP() {
+		CBAPPImpl cbapp = new CBAPPImpl();
+		return cbapp;
 	}
 
 	/**
@@ -98,6 +102,28 @@ public class ComponentesFactoryImpl extends EFactoryImpl implements ComponentesF
 	public Componente createComponente() {
 		ComponenteImpl componente = new ComponenteImpl();
 		return componente;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ProvidedInterface createProvidedInterface() {
+		ProvidedInterfaceImpl providedInterface = new ProvidedInterfaceImpl();
+		return providedInterface;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RequiredInterface createRequiredInterface() {
+		RequiredInterfaceImpl requiredInterface = new RequiredInterfaceImpl();
+		return requiredInterface;
 	}
 
 	/**

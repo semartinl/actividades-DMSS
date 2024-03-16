@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link componentes.Conector#getOrigen <em>Origen</em>}</li>
- *   <li>{@link componentes.Conector#getDestino <em>Destino</em>}</li>
  *   <li>{@link componentes.Conector#getNombre <em>Nombre</em>}</li>
+ *   <li>{@link componentes.Conector#getEndA <em>End A</em>}</li>
+ *   <li>{@link componentes.Conector#getEndB <em>End B</em>}</li>
  * </ul>
  *
  * @see componentes.ComponentesPackage#getConector()
@@ -23,50 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Conector extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Origen</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Origen</em>' reference.
-	 * @see #setOrigen(Componente)
-	 * @see componentes.ComponentesPackage#getConector_Origen()
-	 * @model required="true"
-	 * @generated
-	 */
-	Componente getOrigen();
-
-	/**
-	 * Sets the value of the '{@link componentes.Conector#getOrigen <em>Origen</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Origen</em>' reference.
-	 * @see #getOrigen()
-	 * @generated
-	 */
-	void setOrigen(Componente value);
-
-	/**
-	 * Returns the value of the '<em><b>Destino</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Destino</em>' reference.
-	 * @see #setDestino(Componente)
-	 * @see componentes.ComponentesPackage#getConector_Destino()
-	 * @model required="true"
-	 * @generated
-	 */
-	Componente getDestino();
-
-	/**
-	 * Sets the value of the '{@link componentes.Conector#getDestino <em>Destino</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Destino</em>' reference.
-	 * @see #getDestino()
-	 * @generated
-	 */
-	void setDestino(Componente value);
-
 	/**
 	 * Returns the value of the '<em><b>Nombre</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -88,5 +44,49 @@ public interface Conector extends EObject {
 	 * @generated
 	 */
 	void setNombre(String value);
+
+	/**
+	 * Returns the value of the '<em><b>End A</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>End A</em>' reference.
+	 * @see #setEndA(ProvidedInterface)
+	 * @see componentes.ComponentesPackage#getConector_EndA()
+	 * @model required="true"
+	 * @generated
+	 */
+	ProvidedInterface getEndA();
+
+	/**
+	 * Sets the value of the '{@link componentes.Conector#getEndA <em>End A</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>End A</em>' reference.
+	 * @see #getEndA()
+	 * @generated
+	 */
+	void setEndA(ProvidedInterface value);
+
+	/**
+	 * Returns the value of the '<em><b>End B</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>End B</em>' reference.
+	 * @see #setEndB(RequiredInterface)
+	 * @see componentes.ComponentesPackage#getConector_EndB()
+	 * @model required="true"
+	 * @generated
+	 */
+	RequiredInterface getEndB();
+
+	/**
+	 * Sets the value of the '{@link componentes.Conector#getEndB <em>End B</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>End B</em>' reference.
+	 * @see #getEndB()
+	 * @generated
+	 */
+	void setEndB(RequiredInterface value);
 
 } // Conector

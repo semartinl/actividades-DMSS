@@ -57,14 +57,14 @@ public interface ComponentesPackage extends EPackage {
 	ComponentesPackage eINSTANCE = componentes.impl.ComponentesPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link componentes.impl.RootImpl <em>Root</em>}' class.
+	 * The meta object id for the '{@link componentes.impl.CBAPPImpl <em>CBAPP</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see componentes.impl.RootImpl
-	 * @see componentes.impl.ComponentesPackageImpl#getRoot()
+	 * @see componentes.impl.CBAPPImpl
+	 * @see componentes.impl.ComponentesPackageImpl#getCBAPP()
 	 * @generated
 	 */
-	int ROOT = 0;
+	int CBAPP = 0;
 
 	/**
 	 * The feature id for the '<em><b>Conectores</b></em>' containment reference list.
@@ -73,7 +73,7 @@ public interface ComponentesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT__CONECTORES = 0;
+	int CBAPP__CONECTORES = 0;
 
 	/**
 	 * The feature id for the '<em><b>Componentes</b></em>' containment reference list.
@@ -82,25 +82,25 @@ public interface ComponentesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT__COMPONENTES = 1;
+	int CBAPP__COMPONENTES = 1;
 
 	/**
-	 * The number of structural features of the '<em>Root</em>' class.
+	 * The number of structural features of the '<em>CBAPP</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_FEATURE_COUNT = 2;
+	int CBAPP_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Root</em>' class.
+	 * The number of operations of the '<em>CBAPP</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOT_OPERATION_COUNT = 0;
+	int CBAPP_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link componentes.impl.ConectorImpl <em>Conector</em>}' class.
@@ -113,31 +113,31 @@ public interface ComponentesPackage extends EPackage {
 	int CONECTOR = 1;
 
 	/**
-	 * The feature id for the '<em><b>Origen</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONECTOR__ORIGEN = 0;
-
-	/**
-	 * The feature id for the '<em><b>Destino</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONECTOR__DESTINO = 1;
-
-	/**
 	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONECTOR__NOMBRE = 2;
+	int CONECTOR__NOMBRE = 0;
+
+	/**
+	 * The feature id for the '<em><b>End A</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONECTOR__END_A = 1;
+
+	/**
+	 * The feature id for the '<em><b>End B</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONECTOR__END_B = 2;
 
 	/**
 	 * The number of structural features of the '<em>Conector</em>' class.
@@ -177,13 +177,31 @@ public interface ComponentesPackage extends EPackage {
 	int COMPONENTE__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Provides</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENTE__PROVIDES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Requires</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENTE__REQUIRES = 2;
+
+	/**
 	 * The number of structural features of the '<em>Componente</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENTE_FEATURE_COUNT = 1;
+	int COMPONENTE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Componente</em>' class.
@@ -195,36 +213,147 @@ public interface ComponentesPackage extends EPackage {
 	int COMPONENTE_OPERATION_COUNT = 0;
 
 	/**
-	 * Returns the meta object for class '{@link componentes.Root <em>Root</em>}'.
+	 * The meta object id for the '{@link componentes.impl.InterfaceImpl <em>Interface</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Root</em>'.
-	 * @see componentes.Root
+	 * @see componentes.impl.InterfaceImpl
+	 * @see componentes.impl.ComponentesPackageImpl#getInterface()
 	 * @generated
 	 */
-	EClass getRoot();
+	int INTERFACE = 5;
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link componentes.Root#getConectores <em>Conectores</em>}'.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Interface</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Interface</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link componentes.impl.ProvidedInterfaceImpl <em>Provided Interface</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see componentes.impl.ProvidedInterfaceImpl
+	 * @see componentes.impl.ComponentesPackageImpl#getProvidedInterface()
+	 * @generated
+	 */
+	int PROVIDED_INTERFACE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDED_INTERFACE__NAME = INTERFACE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Provided Interface</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDED_INTERFACE_FEATURE_COUNT = INTERFACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Provided Interface</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDED_INTERFACE_OPERATION_COUNT = INTERFACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link componentes.impl.RequiredInterfaceImpl <em>Required Interface</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see componentes.impl.RequiredInterfaceImpl
+	 * @see componentes.impl.ComponentesPackageImpl#getRequiredInterface()
+	 * @generated
+	 */
+	int REQUIRED_INTERFACE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_INTERFACE__NAME = INTERFACE__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Required Interface</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_INTERFACE_FEATURE_COUNT = INTERFACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Required Interface</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_INTERFACE_OPERATION_COUNT = INTERFACE_OPERATION_COUNT + 0;
+
+	/**
+	 * Returns the meta object for class '{@link componentes.CBAPP <em>CBAPP</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>CBAPP</em>'.
+	 * @see componentes.CBAPP
+	 * @generated
+	 */
+	EClass getCBAPP();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link componentes.CBAPP#getConectores <em>Conectores</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Conectores</em>'.
-	 * @see componentes.Root#getConectores()
-	 * @see #getRoot()
+	 * @see componentes.CBAPP#getConectores()
+	 * @see #getCBAPP()
 	 * @generated
 	 */
-	EReference getRoot_Conectores();
+	EReference getCBAPP_Conectores();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link componentes.Root#getComponentes <em>Componentes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link componentes.CBAPP#getComponentes <em>Componentes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Componentes</em>'.
-	 * @see componentes.Root#getComponentes()
-	 * @see #getRoot()
+	 * @see componentes.CBAPP#getComponentes()
+	 * @see #getCBAPP()
 	 * @generated
 	 */
-	EReference getRoot_Componentes();
+	EReference getCBAPP_Componentes();
 
 	/**
 	 * Returns the meta object for class '{@link componentes.Conector <em>Conector</em>}'.
@@ -237,28 +366,6 @@ public interface ComponentesPackage extends EPackage {
 	EClass getConector();
 
 	/**
-	 * Returns the meta object for the reference '{@link componentes.Conector#getOrigen <em>Origen</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Origen</em>'.
-	 * @see componentes.Conector#getOrigen()
-	 * @see #getConector()
-	 * @generated
-	 */
-	EReference getConector_Origen();
-
-	/**
-	 * Returns the meta object for the reference '{@link componentes.Conector#getDestino <em>Destino</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Destino</em>'.
-	 * @see componentes.Conector#getDestino()
-	 * @see #getConector()
-	 * @generated
-	 */
-	EReference getConector_Destino();
-
-	/**
 	 * Returns the meta object for the attribute '{@link componentes.Conector#getNombre <em>Nombre</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -268,6 +375,28 @@ public interface ComponentesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getConector_Nombre();
+
+	/**
+	 * Returns the meta object for the reference '{@link componentes.Conector#getEndA <em>End A</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>End A</em>'.
+	 * @see componentes.Conector#getEndA()
+	 * @see #getConector()
+	 * @generated
+	 */
+	EReference getConector_EndA();
+
+	/**
+	 * Returns the meta object for the reference '{@link componentes.Conector#getEndB <em>End B</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>End B</em>'.
+	 * @see componentes.Conector#getEndB()
+	 * @see #getConector()
+	 * @generated
+	 */
+	EReference getConector_EndB();
 
 	/**
 	 * Returns the meta object for class '{@link componentes.Componente <em>Componente</em>}'.
@@ -289,6 +418,69 @@ public interface ComponentesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComponente_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link componentes.Componente#getProvides <em>Provides</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Provides</em>'.
+	 * @see componentes.Componente#getProvides()
+	 * @see #getComponente()
+	 * @generated
+	 */
+	EReference getComponente_Provides();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link componentes.Componente#getRequires <em>Requires</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Requires</em>'.
+	 * @see componentes.Componente#getRequires()
+	 * @see #getComponente()
+	 * @generated
+	 */
+	EReference getComponente_Requires();
+
+	/**
+	 * Returns the meta object for class '{@link componentes.ProvidedInterface <em>Provided Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Provided Interface</em>'.
+	 * @see componentes.ProvidedInterface
+	 * @generated
+	 */
+	EClass getProvidedInterface();
+
+	/**
+	 * Returns the meta object for class '{@link componentes.RequiredInterface <em>Required Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Required Interface</em>'.
+	 * @see componentes.RequiredInterface
+	 * @generated
+	 */
+	EClass getRequiredInterface();
+
+	/**
+	 * Returns the meta object for class '{@link componentes.Interface <em>Interface</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Interface</em>'.
+	 * @see componentes.Interface
+	 * @generated
+	 */
+	EClass getInterface();
+
+	/**
+	 * Returns the meta object for the attribute '{@link componentes.Interface#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see componentes.Interface#getName()
+	 * @see #getInterface()
+	 * @generated
+	 */
+	EAttribute getInterface_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -314,14 +506,14 @@ public interface ComponentesPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link componentes.impl.RootImpl <em>Root</em>}' class.
+		 * The meta object literal for the '{@link componentes.impl.CBAPPImpl <em>CBAPP</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see componentes.impl.RootImpl
-		 * @see componentes.impl.ComponentesPackageImpl#getRoot()
+		 * @see componentes.impl.CBAPPImpl
+		 * @see componentes.impl.ComponentesPackageImpl#getCBAPP()
 		 * @generated
 		 */
-		EClass ROOT = eINSTANCE.getRoot();
+		EClass CBAPP = eINSTANCE.getCBAPP();
 
 		/**
 		 * The meta object literal for the '<em><b>Conectores</b></em>' containment reference list feature.
@@ -329,7 +521,7 @@ public interface ComponentesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROOT__CONECTORES = eINSTANCE.getRoot_Conectores();
+		EReference CBAPP__CONECTORES = eINSTANCE.getCBAPP_Conectores();
 
 		/**
 		 * The meta object literal for the '<em><b>Componentes</b></em>' containment reference list feature.
@@ -337,7 +529,7 @@ public interface ComponentesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROOT__COMPONENTES = eINSTANCE.getRoot_Componentes();
+		EReference CBAPP__COMPONENTES = eINSTANCE.getCBAPP_Componentes();
 
 		/**
 		 * The meta object literal for the '{@link componentes.impl.ConectorImpl <em>Conector</em>}' class.
@@ -350,28 +542,28 @@ public interface ComponentesPackage extends EPackage {
 		EClass CONECTOR = eINSTANCE.getConector();
 
 		/**
-		 * The meta object literal for the '<em><b>Origen</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONECTOR__ORIGEN = eINSTANCE.getConector_Origen();
-
-		/**
-		 * The meta object literal for the '<em><b>Destino</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONECTOR__DESTINO = eINSTANCE.getConector_Destino();
-
-		/**
 		 * The meta object literal for the '<em><b>Nombre</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute CONECTOR__NOMBRE = eINSTANCE.getConector_Nombre();
+
+		/**
+		 * The meta object literal for the '<em><b>End A</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONECTOR__END_A = eINSTANCE.getConector_EndA();
+
+		/**
+		 * The meta object literal for the '<em><b>End B</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONECTOR__END_B = eINSTANCE.getConector_EndB();
 
 		/**
 		 * The meta object literal for the '{@link componentes.impl.ComponenteImpl <em>Componente</em>}' class.
@@ -390,6 +582,60 @@ public interface ComponentesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPONENTE__NAME = eINSTANCE.getComponente_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Provides</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENTE__PROVIDES = eINSTANCE.getComponente_Provides();
+
+		/**
+		 * The meta object literal for the '<em><b>Requires</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENTE__REQUIRES = eINSTANCE.getComponente_Requires();
+
+		/**
+		 * The meta object literal for the '{@link componentes.impl.ProvidedInterfaceImpl <em>Provided Interface</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see componentes.impl.ProvidedInterfaceImpl
+		 * @see componentes.impl.ComponentesPackageImpl#getProvidedInterface()
+		 * @generated
+		 */
+		EClass PROVIDED_INTERFACE = eINSTANCE.getProvidedInterface();
+
+		/**
+		 * The meta object literal for the '{@link componentes.impl.RequiredInterfaceImpl <em>Required Interface</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see componentes.impl.RequiredInterfaceImpl
+		 * @see componentes.impl.ComponentesPackageImpl#getRequiredInterface()
+		 * @generated
+		 */
+		EClass REQUIRED_INTERFACE = eINSTANCE.getRequiredInterface();
+
+		/**
+		 * The meta object literal for the '{@link componentes.impl.InterfaceImpl <em>Interface</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see componentes.impl.InterfaceImpl
+		 * @see componentes.impl.ComponentesPackageImpl#getInterface()
+		 * @generated
+		 */
+		EClass INTERFACE = eINSTANCE.getInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERFACE__NAME = eINSTANCE.getInterface_Name();
 
 	}
 

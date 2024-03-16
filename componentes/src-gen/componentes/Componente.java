@@ -2,6 +2,7 @@
  */
 package componentes;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link componentes.Componente#getName <em>Name</em>}</li>
+ *   <li>{@link componentes.Componente#getProvides <em>Provides</em>}</li>
+ *   <li>{@link componentes.Componente#getRequires <em>Requires</em>}</li>
  * </ul>
  *
  * @see componentes.ComponentesPackage#getComponente()
@@ -42,5 +45,29 @@ public interface Componente extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Provides</b></em>' containment reference list.
+	 * The list contents are of type {@link componentes.ProvidedInterface}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Provides</em>' containment reference list.
+	 * @see componentes.ComponentesPackage#getComponente_Provides()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ProvidedInterface> getProvides();
+
+	/**
+	 * Returns the value of the '<em><b>Requires</b></em>' containment reference list.
+	 * The list contents are of type {@link componentes.RequiredInterface}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requires</em>' containment reference list.
+	 * @see componentes.ComponentesPackage#getComponente_Requires()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<RequiredInterface> getRequires();
 
 } // Componente

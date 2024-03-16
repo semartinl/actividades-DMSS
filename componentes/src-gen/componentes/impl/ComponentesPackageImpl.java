@@ -6,8 +6,9 @@ import componentes.Componente;
 import componentes.ComponentesFactory;
 import componentes.ComponentesPackage;
 import componentes.Conector;
-import componentes.Root;
-
+import componentes.Interface;
+import componentes.ProvidedInterface;
+import componentes.RequiredInterface;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -27,7 +28,7 @@ public class ComponentesPackageImpl extends EPackageImpl implements ComponentesP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rootEClass = null;
+	private EClass cbappEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -42,6 +43,27 @@ public class ComponentesPackageImpl extends EPackageImpl implements ComponentesP
 	 * @generated
 	 */
 	private EClass componenteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass providedInterfaceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass requiredInterfaceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass interfaceEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -113,8 +135,8 @@ public class ComponentesPackageImpl extends EPackageImpl implements ComponentesP
 	 * @generated
 	 */
 	@Override
-	public EClass getRoot() {
-		return rootEClass;
+	public EClass getCBAPP() {
+		return cbappEClass;
 	}
 
 	/**
@@ -123,8 +145,8 @@ public class ComponentesPackageImpl extends EPackageImpl implements ComponentesP
 	 * @generated
 	 */
 	@Override
-	public EReference getRoot_Conectores() {
-		return (EReference) rootEClass.getEStructuralFeatures().get(0);
+	public EReference getCBAPP_Conectores() {
+		return (EReference) cbappEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -133,8 +155,8 @@ public class ComponentesPackageImpl extends EPackageImpl implements ComponentesP
 	 * @generated
 	 */
 	@Override
-	public EReference getRoot_Componentes() {
-		return (EReference) rootEClass.getEStructuralFeatures().get(1);
+	public EReference getCBAPP_Componentes() {
+		return (EReference) cbappEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -153,8 +175,8 @@ public class ComponentesPackageImpl extends EPackageImpl implements ComponentesP
 	 * @generated
 	 */
 	@Override
-	public EReference getConector_Origen() {
-		return (EReference) conectorEClass.getEStructuralFeatures().get(0);
+	public EAttribute getConector_Nombre() {
+		return (EAttribute) conectorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -163,7 +185,7 @@ public class ComponentesPackageImpl extends EPackageImpl implements ComponentesP
 	 * @generated
 	 */
 	@Override
-	public EReference getConector_Destino() {
+	public EReference getConector_EndA() {
 		return (EReference) conectorEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -173,8 +195,8 @@ public class ComponentesPackageImpl extends EPackageImpl implements ComponentesP
 	 * @generated
 	 */
 	@Override
-	public EAttribute getConector_Nombre() {
-		return (EAttribute) conectorEClass.getEStructuralFeatures().get(2);
+	public EReference getConector_EndB() {
+		return (EReference) conectorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -195,6 +217,66 @@ public class ComponentesPackageImpl extends EPackageImpl implements ComponentesP
 	@Override
 	public EAttribute getComponente_Name() {
 		return (EAttribute) componenteEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponente_Provides() {
+		return (EReference) componenteEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponente_Requires() {
+		return (EReference) componenteEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getProvidedInterface() {
+		return providedInterfaceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRequiredInterface() {
+		return requiredInterfaceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getInterface() {
+		return interfaceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getInterface_Name() {
+		return (EAttribute) interfaceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -227,17 +309,26 @@ public class ComponentesPackageImpl extends EPackageImpl implements ComponentesP
 		isCreated = true;
 
 		// Create classes and their features
-		rootEClass = createEClass(ROOT);
-		createEReference(rootEClass, ROOT__CONECTORES);
-		createEReference(rootEClass, ROOT__COMPONENTES);
+		cbappEClass = createEClass(CBAPP);
+		createEReference(cbappEClass, CBAPP__CONECTORES);
+		createEReference(cbappEClass, CBAPP__COMPONENTES);
 
 		conectorEClass = createEClass(CONECTOR);
-		createEReference(conectorEClass, CONECTOR__ORIGEN);
-		createEReference(conectorEClass, CONECTOR__DESTINO);
 		createEAttribute(conectorEClass, CONECTOR__NOMBRE);
+		createEReference(conectorEClass, CONECTOR__END_A);
+		createEReference(conectorEClass, CONECTOR__END_B);
 
 		componenteEClass = createEClass(COMPONENTE);
 		createEAttribute(componenteEClass, COMPONENTE__NAME);
+		createEReference(componenteEClass, COMPONENTE__PROVIDES);
+		createEReference(componenteEClass, COMPONENTE__REQUIRES);
+
+		providedInterfaceEClass = createEClass(PROVIDED_INTERFACE);
+
+		requiredInterfaceEClass = createEClass(REQUIRED_INTERFACE);
+
+		interfaceEClass = createEClass(INTERFACE);
+		createEAttribute(interfaceEClass, INTERFACE__NAME);
 	}
 
 	/**
@@ -269,30 +360,50 @@ public class ComponentesPackageImpl extends EPackageImpl implements ComponentesP
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		providedInterfaceEClass.getESuperTypes().add(this.getInterface());
+		requiredInterfaceEClass.getESuperTypes().add(this.getInterface());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoot_Conectores(), this.getConector(), null, "conectores", null, 0, -1, Root.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoot_Componentes(), this.getComponente(), null, "componentes", null, 0, -1, Root.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(cbappEClass, componentes.CBAPP.class, "CBAPP", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCBAPP_Conectores(), this.getConector(), null, "conectores", null, 0, -1,
+				componentes.CBAPP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCBAPP_Componentes(), this.getComponente(), null, "componentes", null, 1, -1,
+				componentes.CBAPP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conectorEClass, Conector.class, "Conector", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConector_Origen(), this.getComponente(), null, "origen", null, 1, 1, Conector.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConector_Destino(), this.getComponente(), null, "destino", null, 1, 1, Conector.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConector_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Conector.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConector_EndA(), this.getProvidedInterface(), null, "endA", null, 1, 1, Conector.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConector_EndB(), this.getRequiredInterface(), null, "endB", null, 1, 1, Conector.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(componenteEClass, Componente.class, "Componente", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponente_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Componente.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponente_Provides(), this.getProvidedInterface(), null, "provides", null, 0, -1,
+				Componente.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponente_Requires(), this.getRequiredInterface(), null, "requires", null, 0, -1,
+				Componente.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(providedInterfaceEClass, ProvidedInterface.class, "ProvidedInterface", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(requiredInterfaceEClass, RequiredInterface.class, "RequiredInterface", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(interfaceEClass, Interface.class, "Interface", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInterface_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Interface.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

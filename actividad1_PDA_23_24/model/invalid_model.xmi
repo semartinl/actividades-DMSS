@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actividad1_PDA_23_24:Universidad
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:actividad1_PDA_23_24="http://www.example.org/actividad1_PDA_23_24"
+    xsi:schemaLocation="http://www.example.org/actividad1_PDA_23_24 ../metamodel/actividad1_PDA_23_24.ecore"
+    Nom_universidad="UNex">
+  <campus Name="TElefonica"
+      profesores_campus="Paco sergio p3 P5 P4"/>
+  <departamentos
+      Name="ADE">
+    <areaconocimientos
+        Name="dERECHO">
+      <profesores
+          Name="Paco"
+          tribunal_de="T3"
+          imparte_en="TElefonica">
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Sexenio"
+            Name="dasdfd"
+            AnioInicio="2019"
+            AnioFinal="2018"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Sexenio"
+            Name="dasfd"
+            AnioInicio="2023"
+            AnioFinal="2019"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Sexenio"
+            Name="dfd"
+            AnioInicio="2010"
+            AnioFinal="2015"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Sexenio"
+            Name="dsafdsaf adsf"
+            AnioInicio="2005"
+            AnioFinal="2010"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Sexenio"
+            Name="asfds fdsa"
+            AnioInicio="2015"
+            AnioFinal="2009"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Sexenio"
+            Name="dasfa dsfadsf "
+            AnioInicio="19995"
+            AnioFinal="2000"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Sexenio"
+            Name="afdasf as"
+            AnioInicio="2018"
+            AnioFinal="2024"/>
+      </profesores>
+      <profesores
+          Name="sergio"
+          tfe="T2"
+          imparte_en="TElefonica">
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Secretario"
+            Name="pepe"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Secretario"
+            Name="pablo"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:TFE"
+            Name="T2"
+            Titulo="TITULO2"
+            Autor="fER"
+            Calificacion="6.0"
+            co_director="sergio"
+            tribunal="p3 P5 P4"/>
+      </profesores>
+    </areaconocimientos>
+    <areaconocimientos>
+      <profesores
+          Name="p3"
+          tfe="T3"
+          tribunal_de="T2 T3"
+          imparte_en="TElefonica">
+        <meritos
+            xsi:type="actividad1_PDA_23_24:TFE"
+            Name="T3"
+            Titulo="TITULO3"
+            Autor="PEDRO"
+            Calificacion="10.0"
+            co_director="p3"
+            tribunal="p3 P5 Paco"/>
+      </profesores>
+      <profesores
+          Name="P5"
+          tribunal_de="T2 T3"
+          imparte_en="TElefonica"/>
+      <profesores
+          Name="P4"
+          tribunal_de="T2"
+          imparte_en="TElefonica"/>
+    </areaconocimientos>
+  </departamentos>
+</actividad1_PDA_23_24:Universidad>

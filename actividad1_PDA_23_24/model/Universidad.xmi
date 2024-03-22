@@ -17,11 +17,14 @@
       profesores_campus="jorge Francisco"/>
   <campus Name="c6"/>
   <departamentos
+      Name="D2"/>
+  <departamentos
       Name="DEP">
     <areaconocimientos
         Name="A!">
       <profesores
           Name="Sergio"
+          tribunal_de="tfe38"
           imparte_en="EP">
         <meritos
             xsi:type="actividad1_PDA_23_24:Evaluacion"
@@ -95,7 +98,15 @@
       <profesores
           Name="Javi"
           tfe="TFE1"
-          imparte_en="EP"/>
+          imparte_en="EP">
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Publicacion"
+            Name="jdklas"
+            Titulo="sdfdasf"
+            Nombre_revista="dsafdsa"
+            Cuartil="C3"
+            Indexacion="JCR"/>
+      </profesores>
       <profesores
           Name="p3"
           tfe="rewf"
@@ -103,9 +114,24 @@
       <profesores
           Name="fer"
           tfe="2"
-          imparte_en="C5"/>
+          imparte_en="C5">
+        <meritos
+            xsi:type="actividad1_PDA_23_24:TFE"
+            Name="tfe38"
+            Titulo="tfe380"
+            Autor="yo"
+            Calificacion="7.0"
+            co_director="jorge"
+            tribunal="Sergio Francisco"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Evaluacion"
+            Name="jasñdlf"
+            Calificacion="6.0"
+            AnioEvaluacion="2020"/>
+      </profesores>
       <profesores
           Name="jorge"
+          tfe="tfe38"
           tribunal_de="TFE1 rewf 2"
           imparte_en="c56"/>
     </areaconocimientos>
@@ -146,7 +172,7 @@
       </profesores>
       <profesores
           Name="Francisco"
-          tribunal_de="2 rewf"
+          tribunal_de="2 rewf tfe38"
           imparte_en="c56"/>
     </areaconocimientos>
   </departamentos>

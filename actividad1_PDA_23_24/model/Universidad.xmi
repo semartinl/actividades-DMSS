@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actividad1_PDA_23_24:Universidad
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:actividad1_PDA_23_24="http://www.example.org/actividad1_PDA_23_24"
+    xsi:schemaLocation="http://www.example.org/actividad1_PDA_23_24 ../metamodel/actividad1_PDA_23_24.ecore"
+    Nom_universidad="UNEX">
+  <campus Name="EP"
+      profesores_campus="Sergio Javi Pepe"/>
+  <campus Name="C5"
+      profesores_campus="fer"/>
+  <campus Name="c3"/>
+  <campus Name="c4"
+      profesores_campus="p3"/>
+  <campus Name="c56"
+      profesores_campus="jorge Francisco"/>
+  <campus Name="c6"/>
+  <departamentos
+      Name="D2"/>
+  <departamentos
+      Name="DEP">
+    <areaconocimientos
+        Name="A!">
+      <profesores
+          Name="Sergio"
+          tribunal_de="tfe38"
+          imparte_en="EP">
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Evaluacion"
+            Name="1"
+            Calificacion="7.0"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Evaluacion"
+            Name="3"
+            Calificacion="5.0"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:TFE"
+            Name="TFE1"
+            Titulo="Menganito"
+            Autor="Yo"
+            co_director="Javi"
+            tribunal="jorge Pepe"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:TFE"
+            Name="2"
+            Titulo="fdsf"
+            Autor="dsfdsf"
+            co_director="fer"
+            tribunal="Pepe Francisco jorge"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Sexenio"
+            Name="Sexenio1"
+            AnioInicio="2014"
+            AnioFinal="2020"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Comision"
+            Name="com"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Subdirector"
+            Name="sub"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Evaluacion"
+            Name="E34"
+            Calificacion="9.0"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Evaluacion"
+            Name="E3"
+            Calificacion="9.0"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Evaluacion"
+            Name="E2"
+            Calificacion="9.0"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Evaluacion"
+            Name="E!"
+            Calificacion="9.0"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:TFE"
+            Name="rewf"
+            Titulo="dasfdd"
+            Autor="dasfdasf"
+            co_director="p3"
+            tribunal="Francisco Pepe jorge"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Evaluacion"
+            Name="fsdfsd"
+            Calificacion="9.0"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Sexenio"
+            Name="Sex3"
+            AnioInicio="2008"
+            AnioFinal="2013"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Comision"
+            Name="hOLA"/>
+      </profesores>
+      <profesores
+          Name="Javi"
+          tfe="TFE1"
+          imparte_en="EP">
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Publicacion"
+            Name="jdklas"
+            Titulo="sdfdasf"
+            Nombre_revista="dsafdsa"
+            Cuartil="C3"
+            Indexacion="JCR"/>
+      </profesores>
+      <profesores
+          Name="p3"
+          tfe="rewf"
+          imparte_en="c4"/>
+      <profesores
+          Name="fer"
+          tfe="2"
+          imparte_en="C5">
+        <meritos
+            xsi:type="actividad1_PDA_23_24:TFE"
+            Name="tfe38"
+            Titulo="tfe380"
+            Autor="yo"
+            Calificacion="7.0"
+            co_director="jorge"
+            tribunal="Sergio Francisco"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Evaluacion"
+            Name="jasñdlf"
+            Calificacion="6.0"
+            AnioEvaluacion="2020"/>
+      </profesores>
+      <profesores
+          Name="jorge"
+          tfe="tfe38"
+          tribunal_de="TFE1 rewf 2"
+          imparte_en="c56"/>
+    </areaconocimientos>
+    <areaconocimientos
+        Name="A2">
+      <profesores
+          Name="Pepe"
+          tribunal_de="TFE1 2 rewf"
+          imparte_en="EP">
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Sexenio"
+            Name="Sexenio2"
+            AnioInicio="2014"
+            AnioFinal="2020"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Publicacion"
+            Name="R1"
+            Titulo="asdfd"
+            Nombre_revista="Revista1"
+            Indexacion="JCR"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Publicacion"
+            Name="dfdsfds"
+            Titulo="fadsadf"
+            Nombre_revista="dsadfdsd"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Comision"
+            Name="c!"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Comision"
+            Name="C2"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Secretario"
+            Name="SEcretario"/>
+        <meritos
+            xsi:type="actividad1_PDA_23_24:Subdirector"
+            Name="s3"/>
+      </profesores>
+      <profesores
+          Name="Francisco"
+          tribunal_de="2 rewf tfe38"
+          imparte_en="c56"/>
+    </areaconocimientos>
+  </departamentos>
+</actividad1_PDA_23_24:Universidad>

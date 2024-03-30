@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cBApp" nsURI="http://www.example.org/cBApp" nsPrefix="cBApp">
+  <eClassifiers xsi:type="ecore:EClass" name="Sistema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conectores" upperBound="-1"
+        eType="#//Conector" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentes" upperBound="-1"
+        eType="#//Componente" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Componente"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Conector" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endA" lowerBound="1" eType="#//Componente"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endB" lowerBound="1" eType="#//Componente"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Seguro" eSuperTypes="#//Conector">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Algoritmo" lowerBound="1"
+        eType="#//TipoAlgoritmo"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="No_Seguro" eSuperTypes="#//Conector"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="TipoAlgoritmo">
+    <eLiterals name="RSA"/>
+    <eLiterals name="DES" value="1"/>
+    <eLiterals name="AES" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

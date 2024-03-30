@@ -1,0 +1,30 @@
+@namespace(uri="http://www.example.org/componentes", prefix="componentes")
+package componentes;
+
+class CBAPP {
+	val Conector[*] conectores;
+	val Componente[+] componentes;
+}
+
+class Conector {
+	attr String nombre;
+	ref ProvidedInterface[1] endA;
+	ref RequiredInterface[1] endB;
+}
+
+class Componente {
+	attr String Name;
+	val ProvidedInterface[*] provides;
+	val RequiredInterface[*] requires;
+}
+
+class ProvidedInterface extends Interface {
+}
+
+class RequiredInterface extends Interface {
+}
+
+abstract class Interface {
+	attr String Name;
+}
+

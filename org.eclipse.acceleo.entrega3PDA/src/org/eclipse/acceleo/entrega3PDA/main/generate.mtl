@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.example.org/actividad1_PDA_23_24')]
+
+
+[template public generateElement(anUniversidad : Universidad)]
+[comment @main/]
+[file (anUniversidad.Nom_universidad+'.java', false, 'UTF-8')]
+	hola mundo
+[/file]
+[/template]
